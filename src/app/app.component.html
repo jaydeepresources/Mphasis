@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="jumbotron py-4">
+        <p class="h1 text-center">Post Book</p>
+    </div>
+
+    <div class="text-center" *ngIf="progressFlag">
+        <i class="fas fa-circle-notch fa-3x fa-spin"></i>
+    </div>
+
+    <div class="card mb-2" *ngFor="let post of posts; let i = index">
+        <div class="card-body">
+            <h4 class="card-title">{{post.title}}</h4>
+            <p class="card-text">{{post.body}}</p>
+        </div>
+    </div>
+
+
+</div>
