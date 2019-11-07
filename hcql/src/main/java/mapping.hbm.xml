@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.hcql.Sales">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="productName"></property>
+		<property name="price"></property>
+	</class>
+	
+</hibernate-mapping>  
