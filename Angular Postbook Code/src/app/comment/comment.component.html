@@ -1,0 +1,50 @@
+<button class="btn btn-primary" type="button" data-toggle="collapse" attr.data-target="#comment{{postId}}" aria-expanded="false"
+  aria-controls="comment" (click)="getComments()">
+  Comment
+</button>
+
+<div class="collapse mt-2" id="comment{{postId}}">
+
+  <div *ngIf="progressFlag">
+
+    <div class="placeholder wave border">
+      <div class="d-flex justify-content-start" style="background: #ffffff;">
+        <div class="circle"></div>
+        <div class="ml-2" style="background: #ffffff;">
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf="!progressFlag">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-start align-items-center" *ngFor="let comment of comments;let i=index">
+        <div class="mr-3">
+          <img src="../../assets/user.png" class="img-rounded" style="max-width: 30px; max-height: 30px;" alt="">
+        </div>
+        <div>
+          <div class="lead text-primary">
+            {{comment.user.userName}}
+          </div>
+          <div class="h6">
+            {{comment.commentText}}
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <form #addCommentForm="ngForm" (ngSubmit)="addComment(addCommentForm)">
+      <div class="input-group mt-2">
+        <input type="text" class="form-control" placeholder="Write a comment" name="commentText" #commentText="ngModel" [(ngModel)]="comment.commentText"
+          required>
+        <div class="input-group-append">
+          <button class="btn btn-dark" type="submit" id="button-addon2" [disabled]="addCommentForm.pristine || addCommentForm.invalid">Save</button>
+        </div>
+      </div>
+      <p class="h6 text-danger mt-2" *ngIf="commentText.dirty && commentText.invalid">Comment can't be empty</p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+
+  <div class="jumbotron py-3">
+    <h2 class="h2 text-center mb-0">Sign In to continue</h2>
+  </div>
+
+  <form #signInForm="ngForm" (ngSubmit)="signInSubmit(signInForm)">
+
+    <div class="form-group">
+      <label>User Name</label>
+      <input type="text" class="form-control" placeholder="Enter User Name" name="userName" #userName="ngModel" [(ngModel)]="user.userName"
+        required>
+      <div class="alert alert-danger" *ngIf="userName.dirty && userName.invalid">
+        <strong>Oh snap!</strong>
+        User Name can't be empty !
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" placeholder="Enter Password" name="password" #password="ngModel" [(ngModel)]="user.password"
+        required>
+      <div class="alert alert-danger" *ngIf="password.dirty && password.invalid">
+        <strong>Oh snap!</strong>
+        Password can't be empty !
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="signInForm.pristine || signInForm.invalid">Sign In</button>
+
+  </form>
+
+  <div class="alert alert-success mt-3" *ngIf="successFlag">
+    <i class="fas fa-circle-notch fa-spin fa-lg mr-3"></i>
+    <strong>Hang On!</strong> You are being redirected to the home page.
+  </div>
+
+  <div class="alert alert-danger mt-3" *ngIf="errorFlag">
+    <i class="fas fa-exclamation-circle fa-lg mr-3"></i>
+    <strong>Oops!</strong> Your credentials couldn't be verified. Please try again !
+  </div>
+
+</div>

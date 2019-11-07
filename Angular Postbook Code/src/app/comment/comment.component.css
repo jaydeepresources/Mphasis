@@ -1,0 +1,59 @@
+.placeholder {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.placeholder div {
+    background: #ffffff;
+}
+
+.placeholder .line {
+    height: 18px;
+    margin: 5px;
+    width: 420px;
+}
+
+.placeholder .line:nth-child(2) {
+    width: 320px;
+}
+
+.placeholder .line:nth-child(3) {
+    width: 270px;
+}
+
+.placeholder .line:nth-child(4) {
+    width: 350px;
+}
+
+.placeholder .circle {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.placeholder.wave div {
+    animation: wave 1s infinite linear forwards;
+    -webkit-animation: wave 1s infinite linear forwards;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+}
+
+@keyframes wave {
+    0% {
+        background-position: -468px 0
+    }
+    100% {
+        background-position: 468px 0
+    }
+}
+
+@-webkit-keyframes wave {
+    0% {
+        background-position: -468px 0
+    }
+    100% {
+        background-position: 468px 0
+    }
+}
