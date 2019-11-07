@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Images</title>
+    <style>
+        /* xs */
+        img {
+            height: 118px;
+            width: 200px;
+        }
+
+        /* sm */
+
+        @media (min-width: 768px) {
+            img {
+                height: 150px;
+                width: 250px;
+            }
+        }
+
+        /* md */
+
+        @media (min-width: 992px) {
+            img {
+                height: 200px;
+                width: 300px;
+            }
+        }
+
+        /* lg */
+
+        @media (min-width: 1200px) {
+            img {
+                height: 400px;
+                width: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="images/image.jpg" alt="Image">
+
+</body>
+
+</html>
