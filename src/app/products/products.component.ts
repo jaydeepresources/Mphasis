@@ -1,0 +1,19 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css']
+})
+export class ProductsComponent implements OnInit {
+
+  mobiles: string[]
+
+  constructor() {
+    this.mobiles = ['One Plus', 'Apple', 'Samsung', 'Nokia']
+  }
+
+  ngOnInit() {
+  }
+
+}
