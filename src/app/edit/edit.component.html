@@ -1,0 +1,39 @@
+<div class="modal fade" id="exampleModal{{editedPost.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="m-0 p-0" #editForm="ngForm" (ngSubmit)="editPost(editForm)">
+        <div class="modal-body">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="enter new title" name="title" #title="ngModel" [(ngModel)]="editedPost.title"
+              required>
+            <p class="h6 text-danger mt-2" *ngIf="title.dirty && title.invalid">Title can't be empty</p>
+          </div>
+          <div class="form-group mb-0">
+            <textarea class="form-control" rows="3" placeholder="enter body" name="body" #body="ngModel" [(ngModel)]="editedPost.body"
+              required>
+                  </textarea>
+            <p class="h6 text-danger mt-2" *ngIf="body.dirty && body.invalid">Body can't be empty</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center pb-3 px-3">
+          <div class="badge badge-success mr-auto" role="alert" *ngIf="successFlag && editForm.pristine">
+            <p class="lead m-2"> Post updated !</p>
+          </div>
+          <div class="mr-2">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary" [disabled]="editForm.pristine || editForm.invalid">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

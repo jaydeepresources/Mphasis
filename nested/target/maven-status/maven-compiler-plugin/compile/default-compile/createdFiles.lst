@@ -1,0 +1,6 @@
+com/nested/Comment.class
+com/nested/Post.class
+com/nested/NestedApplication.class
+com/nested/PostRepository.class
+com/nested/AppController.class
+com/nested/CommentRepository.class

@@ -1,0 +1,20 @@
+<form class="mb-4" #addForm="ngForm" (ngSubmit)="addPost(addForm)">
+  <fieldset>
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="enter title" name="title" #title="ngModel" [(ngModel)]="newPost.title"
+        required>
+        <p class="h6 text-danger mt-2" *ngIf="title.dirty && title.invalid">Title can't be empty</p>
+    </div>
+
+    <div class="form-group">
+      <textarea class="form-control" rows="3" placeholder="enter body" name="body" #body="ngModel" [(ngModel)]="newPost.body"
+        required>
+      </textarea>
+      <p class="h6 text-danger mt-2" *ngIf="body.dirty && body.invalid">Body can't be empty</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="addForm.pristine || addForm.invalid">Submit</button>
+
+  </fieldset>
+</form>
