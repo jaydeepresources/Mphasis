@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import dao.PostDAOImpl;
 
 @RestController
-@CrossOrigin(methods = { RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST, RequestMethod.PUT })
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST, RequestMethod.PUT })
 @RequestMapping("posts")
 public class PostsController {
 
