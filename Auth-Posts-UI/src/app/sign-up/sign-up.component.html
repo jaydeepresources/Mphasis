@@ -1,0 +1,61 @@
+<div>
+
+    <h2 class="text-primary my-4">Sign Up</h2>
+    <hr />
+
+    <form (ngSubmit)="signUpSubmit(signUpForm)" #signUpForm="ngForm">
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-control" placeholder="enter your full name" name="name" #name="ngModel"
+                [(ngModel)]="user.name" required>
+            <small class="text-danger" *ngIf="name.dirty && name.invalid">Name can't be empty</small>
+        </div>
+        <div class="form-group">
+            <label>User Name</label>
+            <input type="text" class="form-control" placeholder="enter your user name" name="username"
+                #username="ngModel" [(ngModel)]="user.username" required>
+            <small class="text-danger" *ngIf="username.dirty && username.invalid">Username can't be empty</small>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="enter your password" name="password"
+                #password="ngModel" [(ngModel)]="user.password" required>
+            <small class="text-danger" *ngIf="password.dirty && password.invalid">Password can't be empty</small>
+        </div>
+        <button type="submit" class="btn btn-primary"
+            [disabled]="signUpForm.pristine || (signUpForm.dirty && signUpForm.invalid)">Submit</button>
+    </form>
+
+    <app-spinner *ngIf="progressFlag"></app-spinner>
+
+    <div class="alert alert-success my-3" role="alert" *ngIf="successFlag">
+        <div class="d-flex justify-content-start align-items-center">
+            <i class="material-icons md-28 mr-3">
+                check_circle_outline
+            </i>
+            <h4 class="alert-heading mb-0">
+                Sign up successfull!
+            </h4>
+        </div>
+
+        <hr />
+        <p class="mb-0">You have been successfully signed up. Please click on the <a class="alert-link"
+                routerLink="/signin">login</a> link
+            to authenticate and proceed to our application.</p>
+    </div>
+
+    <div class="alert alert-danger my-3" role="alert" *ngIf="errorFlag">
+        <div class="d-flex justify-content-start align-items-center">
+            <i class="material-icons md-28 mr-3">
+                highlight_off
+            </i>
+            <h4 class="alert-heading mb-0">
+                Sign up unsuccessfull!
+            </h4>
+        </div>
+
+        <hr />
+        <p class="mb-0">Maybe the username you are trying is already taken. Please choose a different username.</p>
+    </div>
+
+</div>

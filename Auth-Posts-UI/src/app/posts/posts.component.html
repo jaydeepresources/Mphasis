@@ -1,0 +1,15 @@
+<h2 class="text-primary my-4">Posts</h2>
+<hr />
+
+<app-spinner *ngIf="progressFlag"></app-spinner>
+
+<div class="card my-2" *ngFor="let post of crud.posts; let i=index">
+    <div class="card-body">
+        <h4 class="card-title">{{post.title}}</h4>
+        <p class="card-text">{{post.body}}</p>
+        <div *ngIf="auth.currentUser.userId === post.userId">
+            <button class="btn btn-link">Update</button>
+            <button class="btn btn-link" (click)="deletePost(post.postId)">Delete</button>
+        </div>
+    </div>
+</div>
