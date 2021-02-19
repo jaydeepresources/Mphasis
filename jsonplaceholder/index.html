@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Post Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron py-3">
+            <p class="display-4 text-center mb-0">Posts</p>
+        </div>
+
+        <div id="spinner" class="d-flex justify-content-center align-items-center">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div id="usersListArea" class="list-group"></div>
+            </div>
+            <div class="col-sm">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">posts</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#todos" role="tab" aria-controls="todos" aria-selected="false">todos</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="albums-tab" data-toggle="tab" href="#albums" role="tab" aria-controls="albums" aria-selected="false">albums</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                        <div id="postsArea"></div>
+                    </div>
+                    <div class="tab-pane fade" id="todos" role="tabpanel" aria-labelledby="todos-tab">
+                        <div id="todosListArea"></div>
+                    </div>
+                    <div class="tab-pane fade" id="albums" role="tabpanel" aria-labelledby="albums-tab">
+                        <div id="albumsCardsArea"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>getUsers()</script>
+</body>
+
+</html>
